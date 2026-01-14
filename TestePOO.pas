@@ -64,11 +64,12 @@ end;
 
 {MAIN}
 
-var 
-   livro: TLivro('SLA','777','Senhor dos Aneis')
+
 begin
-   writeln(livro.getAutor);
-   writeln(livro.getNome);
-   writeln(livro.getId);
+var livro:= TLivro.Create('SLA','Senhor dos Aneis',777);
+   writeln(livro.getAutor());
+   writeln(livro.getNome());
+   writeln(livro.getId());
     livro.free;
+    Readln;
 end.
