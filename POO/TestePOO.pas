@@ -1,17 +1,27 @@
 program Cheers;
 
+{$APPTYPE CONSOLE}
+{$R *.res}
+
+uses
+  System.SysUtils;
+
+
 type
      TLivro = class
-        private
+     private
         nome : string;
         autor : string;
         id :  Integer;
 
       public
-      constructor Create(NOME: string; AUTOR: string; ID: Integer );
+      constructor Create(NOME: string; AUTOR: string; ID: Integer ); overload;
+       constructor Create; overload;
+
        procedure setNome(NOME: string);
        procedure setId(ID: Integer);
        procedure setAutor(AUTOR: string);
+       procedure mostrarLivro;
 
        function getNome: string;
        function getAutor: string;
@@ -21,11 +31,21 @@ type
 end;
 
 { CONSTRUCTOR }
-constructor TLivro.Create(NOME: string; AUTOR: string; ID: Integer );
+constructor TLivro.Create;
 begin
-  nome  := NOME;
-  autor := AUTOR;
-  id := ID;
+  inherited Create;
+  nome:= 'nil'  ;
+  autor:= 'nil';
+  id:= 0;
+end;
+
+constructor TLivro.Create(NOME: string; AUTOR: string; ID: Integer);
+begin
+  inherited Create;
+  Writeln('Construtor chamado!');
+  Self.nome  := NOME;
+  Self.autor := AUTOR;
+  Self.id := ID;
 end;
 
 {SETS LIVRO}
@@ -61,15 +81,20 @@ begin
   Result:= id;
 end;
 
+{Mostrar Dados do livro}
+procedure TLivro.mostrarLivro;
+begin
+  writeln('Nome: ' , nome);
+  writeln('Autor: ', autor);
+end;
 
 {MAIN}
-
-
+var
+  livro : TLivro;
 begin
-var livro:= TLivro.Create('SLA','Senhor dos Aneis',777);
-   writeln(livro.getAutor());
-   writeln(livro.getNome());
-   writeln(livro.getId());
-    livro.free;
-    Readln;
+  livro := TLivro.Create('SLA', 'NOME',787);
+
+  livro.mostrarLivro();
+  livro.free;
+  Readln;
 end.
