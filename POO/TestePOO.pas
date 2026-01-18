@@ -88,15 +88,38 @@ begin
   writeln('Autor: ', autor);
 end;
 
-
+{Procedimentos]
 
 {MAIN}
 var
-  livro : TLivro;
+  livro : array of TLivro;
+  nome: string;
+  autor: string;
+  id: integer;
+  tamanho: integer;
 begin
-  livro := TLivro.Create('SLA', 'NOME',787);
+  Write('Digite o numero de livros que quer cadastrar');
+  Readln(tamanho);
+  SetLength(livro, tamanho);
+  for var i:= 0  to tamanho-1 do
+  begin
+    Writeln('Cadastarando livro:', i);
+    Write('Digite o nome:');
+    Readln(nome);
+    Write('Digite o autor:');
+    Readln(autor);
+    Write('Digite o id:');
+    Readln(id);
+    livro[i] := TLivro.Create(autor, nome, id);
+  end;
 
-  livro.mostrarLivro();
-  livro.free;
+
+  Write('Libereando memoria');
+  for var i:= 0  to  tamanho-1 do
+  begin
+
+    livro[i].free;
+  end;
+
   Readln;
 end.
