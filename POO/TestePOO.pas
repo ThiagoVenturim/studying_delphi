@@ -1,4 +1,4 @@
-program Cheers;
+program uLivro;
 
 {$APPTYPE CONSOLE}
 {$R *.res}
