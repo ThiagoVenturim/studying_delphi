@@ -1,0 +1,101 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 521
+  ClientWidth = 890
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnClick = ConfirmarLogin
+  TextHeight = 15
+  object ScrollBar1: TScrollBar
+    Left = 0
+    Top = 504
+    Width = 890
+    Height = 17
+    Align = alBottom
+    PageSize = 0
+    TabOrder = 0
+    ExplicitLeft = 72
+    ExplicitTop = 682
+    ExplicitWidth = 1203
+  end
+  object pnlTItulo: TPanel
+    Left = 0
+    Top = 0
+    Width = 890
+    Height = 73
+    Align = alTop
+    Caption = 'Sistema de Biblioteca'
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 1
+    ExplicitWidth = 1203
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 443
+    Width = 89
+    Height = 41
+    Caption = 'Fechar'
+    TabOrder = 2
+    OnClick = FecharSistema
+  end
+  object Button2: TButton
+    Left = 793
+    Top = 443
+    Width = 89
+    Height = 41
+    Caption = 'Avan'#231'ar'
+    TabOrder = 3
+    Visible = False
+  end
+  object gpLogin: TGroupBox
+    Left = 120
+    Top = 96
+    Width = 681
+    Height = 305
+    Caption = 'Login'
+    TabOrder = 4
+    object cbLogin: TComboBox
+      Left = 224
+      Top = 72
+      Width = 226
+      Height = 23
+      TabOrder = 0
+      Text = 'Selecione o Usuario'
+      Items.Strings = (
+        'Usuario '
+        'ADM')
+    end
+    object edtLoginEmail: TEdit
+      Left = 224
+      Top = 120
+      Width = 226
+      Height = 23
+      TabOrder = 1
+      TextHint = 'Digite seu email '
+    end
+    object etdLoginSenha: TEdit
+      Left = 224
+      Top = 168
+      Width = 226
+      Height = 23
+      TabOrder = 2
+      TextHint = 'Digite sua senha'
+    end
+    object btnConfirmar: TButton
+      Left = 544
+      Top = 256
+      Width = 121
+      Height = 33
+      Caption = 'Confirmar'
+      TabOrder = 3
+      OnClick = ConfirmarLogin
+    end
+  end
+end

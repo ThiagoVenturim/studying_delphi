@@ -1,0 +1,34 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.CustomizeDlg, Vcl.Menus,
+  Vcl.ComCtrls, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    ScrollBar1: TScrollBar;
+    pnlTItulo: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    gpLogin: TGroupBox;
+    cbLogin: TComboBox;
+    edtLoginEmail: TEdit;
+    etdLoginSenha: TEdit;
+    btnConfirmar: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.
